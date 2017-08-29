@@ -1,6 +1,6 @@
 # Tra-Final Project
 
-## <span style="color:red "> <strong> Main rule - You can not merge your own requests. We will be penalized if you do so.</strong> </span>
+## <span style="color:redS"> <strong> Main rule - You can not merge your own requests. We will be penalized if you do so.</strong> </span>
 
 ## Git Repo Procedure
 
