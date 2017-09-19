@@ -1,4 +1,5 @@
 /*We will import all our sass files here*/
+
 @import 'partials/variables';
 @import 'partials/normalize';
 @import 'partials/typography';
@@ -13,5 +14,7 @@
 @import 'partials/search';
 @import 'partials/storeCount';
 @import 'partials/map';
-@import 'partials/_single';
-@import 'partials/_heart';
+@import 'partials/single';
+@import 'partials/heart';
+@import 'partials/reviewer';
+@import 'partials/reviews';

@@ -3,6 +3,7 @@ const storeController = require('./../controllers/storeController');
 const { catchErrors } = require('./../handlers/errorHandlers');
 const userController = require('./../controllers/userController');
 const authController = require('./../controllers/authController');
+const reviewController = require('./../controllers/reviewController');
 const scrapeController = require('./../controllers/scrapeController');
 
 const router = express.Router();
@@ -32,12 +33,12 @@ router.get('/add', authController.isLoggedIn, storeController.addStore);
 router.get('/register', userController.registerForm);
 
 router.post(
-  '/register',
-  userController.validateRegister,
-  userController.register,
-  authController.login
+    '/register',
+    userController.validateRegister,
+    userController.register,
+    authController.login
 );
-//========= Addeded get Logout ========
+// ========= Addeded get Logout ========
 router.get('/logout', authController.logout);
 
 // ======== Added get account ========
@@ -51,29 +52,36 @@ router.post('/account/forgot', catchErrors(authController.forgotPassword));
 router.get('/account/reset/:token', catchErrors(authController.reset));
 // ========= Added Post Reset =========
 router.post(
-  '/account/reset/:token',
-  authController.confirmedPasswords,
-  catchErrors(authController.update)
+    '/account/reset/:token',
+    authController.confirmedPasswords,
+    catchErrors(authController.update)
 );
 
 router.get('/store/:slug', catchErrors(storeController.getStoreBySlug));
 
 router.post(
-  '/add',
-  storeController.upload,
-  catchErrors(storeController.resize),
-  catchErrors(storeController.createStore)
+    '/add',
+    storeController.upload,
+    catchErrors(storeController.resize),
+    catchErrors(storeController.createStore)
 );
 
 router.post(
-  '/add/:id',
-  storeController.upload,
-  catchErrors(storeController.resize),
-  catchErrors(storeController.updateStore)
+    '/add/:id',
+    storeController.upload,
+    catchErrors(storeController.resize),
+    catchErrors(storeController.updateStore)
 );
 
+// Google Maps
 router.get('/map', storeController.mapPage);
+
+// Like Stores section
 router.get('/hearts', authController.isLoggedIn, catchErrors(storeController.getHearts));
+
+// Reviews
+router.post('/reviews/:id', authController.isLoggedIn, catchErrors(reviewController.addReview));
+
 /*
 
   API
