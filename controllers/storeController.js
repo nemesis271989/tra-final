@@ -207,7 +207,8 @@ exports.heartStore = async(req, res) => {
     const operator = hearts.includes(req.params.id) ? '$pull' : '$addToSet';
     const user = await User
         .findByIdAndUpdate(req.user._id, {
-            [operator]: { hearts: req.params.id } }, { new: true });
+            [operator]: { hearts: req.params.id }
+        }, { new: true });
     res.json(user);
 };
 
@@ -217,3 +218,9 @@ exports.getHearts = async(req, res) => {
     });
     res.render('stores', { title: 'Hearted Stores', stores });
 };
+
+exports.getTopStores = async(req, res) => {
+    const stores = await Store.getTopStores();
+    res.json(stores);
+    // res.render('topStores', { stores, title: 'Top 10 Stores' });
+}
