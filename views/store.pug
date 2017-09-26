@@ -1,6 +1,10 @@
 extends layout
 
+include mixins/_reviewForm
+include mixins/_review
+
 block content
+    //- pre=h.dump(store)
     .single
       .single__hero
         img.single__image(src=`/uploads/${store.photo || 'store-closing.jpg'}`)
@@ -21,5 +25,17 @@ block content
                 //- span.tag__text= tag (alternative way to code above line)
                 //- show with parenthesees   span.tag__text (#{tag})
                 //- show with #   span.tag__text ##{tag}
+<<<<<<< HEAD
       if user
         +reviewForm(store)
+=======
+
+      if user
+        +reviewForm(store)
+
+      if store.reviews
+        .reviews
+          each review in store.reviews
+            .review
+              +review(review)
+>>>>>>> 2d12dfa77679f647878b9194d6e209f31cfd8e08

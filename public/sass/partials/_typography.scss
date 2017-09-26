@@ -1,4 +1,5 @@
 @font-face {
+<<<<<<< HEAD
   font-family: 'hamurz';
   src: url('/fonts/hamurz_free_version-webfont.woff2') format('woff2'),
     url('/fonts/hamurz_free_version-webfont.woff') format('woff');
@@ -13,6 +14,22 @@ html {
 body {
   font-size: 1.5rem;
   color: $white;
+=======
+    font-family: 'hamurz';
+    src: url('/fonts/hamurz_free_version-webfont.woff2') format('woff2'),
+    url('/fonts/hamurz_free_version-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-size: 1.5rem;
+    color: $white;
+>>>>>>> 2d12dfa77679f647878b9194d6e209f31cfd8e08
 }
 
 h1,
@@ -20,6 +37,7 @@ h2,
 h3,
 h4,
 h5,
+<<<<<<< HEAD
 h6 {
   font-family: 'Hamurz';
   font-size: 5rem;
@@ -30,36 +48,58 @@ h6 {
 a {
   color: $black;
   text-decoration: none;
+=======
+h6,
+{
+    font-family: 'Hamurz';
+    font-size: 5rem;
+    font-weight: 600;
+    letter-spacing: -1px;
+}
+
+a {
+    color: $black;
+    text-decoration: none;
+>>>>>>> 2d12dfa77679f647878b9194d6e209f31cfd8e08
 }
 
 p a {
-  border-bottom: 2px solid $danger-yellow;
+    border-bottom: 2px solid $danger-yellow;
 }
 
 p {
-  font-size: 1.6rem;
-  line-height: 2;
+    font-size: 1.6rem;
+    line-height: 2;
 }
 
 .title {
-  position: relative;
-  z-index: 2;
+    position: relative;
+    z-index: 2;
 
+<<<<<<< HEAD
   font-size: 4rem;
   line-height: 1.1;
   margin: 0;
   transform: skew(0, -3deg);
   word-wrap: break-word;
+=======
+    font-size: 4rem;
+    line-height: 1.1;
+    margin: 0;
+    transform: skew(0, -3deg);
+    word-wrap: break-word;
+>>>>>>> 2d12dfa77679f647878b9194d6e209f31cfd8e08
 
-  &--long {
-    font-size: 3rem;
-  }
-  &:before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
+    &--long {
+        font-size: 3rem;
+    }
+    &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
 
+<<<<<<< HEAD
     content: '';
     display: block;
     height: 100%;
@@ -73,14 +113,29 @@ p {
     padding: 40px;
     border-bottom: 0;
   }
+=======
+        content: '';
+        display: block;
+        height: 100%;
+        transform: skew(-5deg);
+        width: 50px;
+    } // inline link inside
+    a {
+        background-color: $yellow-alpha;
+        color: $black;
+        padding: 40px;
+        border-bottom: 0;
+    }
+>>>>>>> 2d12dfa77679f647878b9194d6e209f31cfd8e08
 }
 
 .title--single {
-  max-width: 600px;
-  margin-top: -9rem;
-  font-size: 10rem;
-  text-align: center;
+    max-width: 600px;
+    margin-top: -9rem;
+    font-size: 10rem;
+    text-align: center;
 }
+<<<<<<< HEAD
 a {
   color: $black;
   text-decoration: none;
@@ -136,3 +191,5 @@ p {
   font-size: 10rem;
   text-align: center;
 }
+=======
+>>>>>>> 2d12dfa77679f647878b9194d6e209f31cfd8e08
