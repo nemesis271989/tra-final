@@ -4,14 +4,15 @@ const { catchErrors } = require('./../handlers/errorHandlers');
 const userController = require('./../controllers/userController');
 const authController = require('./../controllers/authController');
 const scrapeController = require('./../controllers/scrapeController');
-
+const mongoose = require('mongoose');
+const Review = mongoose.model('Review');
 const router = express.Router();
 
 // Do work here
 router.get('/', catchErrors(storeController.getStores));
 router.get('/stores', catchErrors(storeController.getStores));
 
-router.get('/stores/page/:page', catchErrors(storeController.getStores));
+router.get('/stores/page/:page',F catchErrors(storeController.getStores));
 router.get('/stores/:id/edit', catchErrors(storeController.editStore));
 
 // ========== Get Tags =========
@@ -91,5 +92,20 @@ router.get('/api/v1/scrape', scrapeController.scrapeStores);
 router.get('/api/v1/search', catchErrors(storeController.searchStores));
 router.get('/api/v1/stores/near', catchErrors(storeController.mapStores));
 router.post('/api/v1/stores/:id/heart', catchErrors(storeController.heartStore));
+
+// more code
+
+router.post('/reviews/:id', authController.isLoggedIn, catchErrors(reviewController.addReview));
+/*
+
+  API
+
+*/
+
+// more code
+
+exports.addReview = async (req, res) => {
+  res.json(req.body);
+};
 
 module.exports = router;
